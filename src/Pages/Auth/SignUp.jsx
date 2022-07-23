@@ -20,7 +20,7 @@ const SignUp =() => {
 
                                 <Inputs type={'text'} placeholder={' Name '}/>
                                 <Inputs type={'email'} placeholder={' Email  '}/>
-                                <Inputs type={'password'} placeholder={' Password  '} type={'password'}/>
+                                <Inputs type={'password'} placeholder={' Password  '} />
 
                                 <center>
                                     <Buttons value={'Sign Up'}/>    
