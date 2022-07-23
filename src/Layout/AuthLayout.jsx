@@ -6,9 +6,17 @@ const AuthLayout = ({children}) => {
         <>
         
             <ContainerLayout>
-                <Box padding={'2em'} bg={'#fff'}>
-                    {children}
-                </Box>
+               <Box display={'flex'} alignItems={'center'} h={'70vh'}>
+                <Box padding={'2em'} bg={'#fff'} 
+                    width={['100%' , '70%']}
+                    mx={'auto'}
+                    
+                    >
+                        {children}
+                        
+                    </Box>
+               </Box>
+
             </ContainerLayout>
         
         </>
