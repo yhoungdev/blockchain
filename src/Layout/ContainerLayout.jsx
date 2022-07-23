@@ -1,11 +1,17 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 const ContainerLayout = ( { children } ) => {
     return (
         <>
         
-            <Box width={['100%' , '80%']}>
-                {children}
+            <Box width={['100%']} h={'100vh'} bg={'var(--primary)'}>
+             
+             
+                <Container maxW={['100%' , '80%']}>
+                    {children}
+                </Container>
+            
+            
             </Box>
 
         </>
