@@ -8,7 +8,7 @@ const LoginButton = () => {
         <>
         
             <Buttons value={'Login'}
-                onClcik={() => loginWithRedirect()}
+                onClick={() => loginWithRedirect()}
             />
         
         </>

@@ -1,6 +1,7 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Menu, MenuButton, MenuItem, Text, MenuList } from "@chakra-ui/react";
 import Buttons from "./Buttons";
-
+import {MdOutlineArrowDropDown} from 'react-icons/md'
+import {HiOutlineLogout} from 'react-icons/hi'
 const Header = () => {
     return (
         <>
@@ -14,7 +15,19 @@ const Header = () => {
 
 
                 <Box>
-                    <Buttons value={'Log out '} /> 
+                    <Menu>
+                        <MenuButton>
+                            <Flex alignItems={'center'}>
+                                 <Avatar size={'md'}/>
+                                 <MdOutlineArrowDropDown size={'2em'}/>
+                            </Flex>
+                            <MenuList>
+                                <MenuItem>
+                                    <Flex alignItems={'center'} gap={"2"}><HiOutlineLogout/><Text>Logout</Text></Flex>
+                                </MenuItem>
+                            </MenuList>
+                        </MenuButton>
+                    </Menu>
                 </Box>
 
             </Flex>
