@@ -7,6 +7,7 @@ import SignIn from './Pages/Auth/Signin';
 import SignUp from './Pages/Auth/SignUp';
 import Homepage from './Pages/Homepage';
 import ProjectView from './Pages/ProjectView';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/signup" element={< SignUp />} />
             <Route path='/home' element={<Homepage/>} />
             <Route path='/home/:id' element={<ProjectView/>} />
+            <Route path='*' element={<NotFound/>} />
 
             <Route path='/user/admin/upload ' element={<UploadProject />} />
           </Routes>
