@@ -3,6 +3,7 @@ import ContainerLayout from "../../Layout/ContainerLayout";
 import {Box , Text , Button, Input} from "@chakra-ui/react";
 import Inputs from "../../components/Inputs";
 import Buttons from "../../components/Buttons";
+import LoginButton from "./AuthLogin";
 
 const SignIn =() => {
     return (
@@ -23,7 +24,14 @@ const SignIn =() => {
                                 <Inputs placeholder={' Password  '} type={'password'}/>
 
                                 <center>
-                                    <Buttons value={'Sign In'}/>    
+                                    <Buttons value={'Sign In'}
+                                        isLoading={false}
+                                        loadingText={'Logging In...'}
+                                    
+                                    />    
+
+                                    <Text my={'1em'}>Or </Text>
+                                    <LoginButton />
                                 </center>
 
 

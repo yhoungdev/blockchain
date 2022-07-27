@@ -1,7 +1,7 @@
 import  { Button } from '@chakra-ui/react';
 
 
-const Buttons =(  { value  } ) => {
+const Buttons =(  { value , isLoading , loadingText , onClick  } ) => {
 
     return (
         <>
@@ -12,6 +12,11 @@ const Buttons =(  { value  } ) => {
             color={'#fff'}
              py={'1.5em'} 
              px={"3em"}
+             isLoading={isLoading}
+             loadingText={loadingText}
+             colorScheme={'blue'}
+             onClick={onClick}
+             
                 _hover = {{
                         background:'blue.600',
                 }}
