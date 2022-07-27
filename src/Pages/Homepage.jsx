@@ -2,8 +2,28 @@ import { Box , Text } from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ProjectContainer from "../components/ProjectConatiner";
 import ContainerLayout from "../Layout/ContainerLayout"
+import { useEffect , useState} from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+
+    //initilize the useAuth0 hook
+    const navigate = useNavigate();
+    const { user, isAuthenticated } = useAuth0();
+
+    useEffect(()=> {
+        //check if use is Authenticate 
+        if(!isAuthenticated){
+
+            //redirect to login page
+            navigate('/');
+
+        } else {
+            //if user is Authenticated
+        }
+    },[])
+
     return (
         <>
 
