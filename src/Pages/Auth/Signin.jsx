@@ -4,8 +4,22 @@ import {Box , Text , Button, Input} from "@chakra-ui/react";
 import Inputs from "../../components/Inputs";
 import Buttons from "../../components/Buttons";
 import LoginButton from "./AuthLogin";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SignIn =() => {
+
+    const navigate = useNavigate();
+
+    const { user, isAuthenticated } = useAuth0();
+    
+    if(isAuthenticated){
+        navigate('/home');
+    }
+
+    
+
     return (
         <>
         

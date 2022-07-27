@@ -17,7 +17,7 @@ const Homepage = () => {
         if(!isAuthenticated){
 
             //redirect to login page
-            navigate('/login');
+            navigate('/');
 
         } else {
             //if user is Authenticated
