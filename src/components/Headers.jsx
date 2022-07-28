@@ -4,6 +4,7 @@ import {MdOutlineArrowDropDown} from 'react-icons/md'
 import {HiOutlineLogout} from 'react-icons/hi'
 import {AiOutlineUser} from 'react-icons/ai'
 import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from '../Pages/Auth/AuthLogin';
 
 
 const Header = () => {
@@ -29,7 +30,15 @@ const Header = () => {
 
 
                 <Box>
-                    <Menu>
+                    
+
+
+                    {
+                        //check if user is authenticated
+                        isAuthenticated ? (
+                                <>
+                                
+                                <Menu>
                         <MenuButton>
                             <Flex alignItems={'center'} gap={'1em'}>
                                  <Avatar size={'md'} src={user?.picture}/>
@@ -53,6 +62,15 @@ const Header = () => {
                             </MenuList>
                         </MenuButton>
                     </Menu>
+                                </>
+                        ) :
+
+                        (
+                            <>
+                                <LoginButton />
+                            </>
+                        )
+                    }
                 </Box>
 
             </Flex>
