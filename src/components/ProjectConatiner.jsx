@@ -1,6 +1,7 @@
-import { Box , Image , Text } from "@chakra-ui/react";
+import { Box , Image , Flex, Text, Button } from "@chakra-ui/react";
+import {AiFillStar} from 'react-icons/ai'
 
-const ProjectContainer =() => {
+const ProjectContainer =({name , image , rating , description , projectName}) => {
     return (
         <>
 
@@ -9,10 +10,18 @@ const ProjectContainer =() => {
              px={'3em'} py={'2em'} width={['100' , '30%']}
              
              >
+                
+                <Box mb={'1em'}>
+                 <Image src={image} />
+                </Box>
+                <Text fontWeight={'bold'}> {name}</Text>
+                <Box display={'flex'} alignItems={'center'} gap={'1em'}> <AiFillStar fill="#fdff0c"/><Text>{rating}</Text></Box>
+                
+                <Box>
+                    <Text>{description}</Text>
+                </Box>
 
-                <Image src={''} />
-                <Text> Application</Text>
-
+                <Button my={'0.5em'} w={'100%'} py={'1.7em'}>Checkout {projectName}</Button>
             </Box>
         
         </>
