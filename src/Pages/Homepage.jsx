@@ -8,6 +8,71 @@ import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
 
+    const dapps = [
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            route: '/home/galacticops'
+        } ,
+        
+        
+        
+    ]
+
     //initilize the useAuth0 hook
     const navigate = useNavigate();
     const { user, isAuthenticated } = useAuth0();
@@ -27,10 +92,10 @@ const Homepage = () => {
     return (
         <>
 
+             <Header />
 
             <ContainerLayout>
-                <Header />
-
+               
                 <Box my={'2em'}>
 
                     <Text fontWeight={'bold'} fontSize={'1.5em'}>List of Dapps</Text>
@@ -43,11 +108,14 @@ const Homepage = () => {
                     flexWrap = {'wrap'}
                 >
                     {
-                        [1,2,3,4,6,7,8].map(items => {
+                        dapps.map(items => {
                             return (
                                 <>
 
-                                     <ProjectContainer/>
+                                     <ProjectContainer name={items.name} rating={items.rating}
+                                        description={items.description} image={items.image} route={items.route} 
+                                     
+                                     />
                                 
                                 </>
                             )
