@@ -15,7 +15,9 @@ const Header = () => {
     console.log(user)
     const logOut = () => {
         logout({returnTo: window.location.origin})
-        window.location.reload()
+        setTimeout(()=> {
+            window.location.reload()
+        }, 2000)
     };
     return (
         <>
