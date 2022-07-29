@@ -8,11 +8,11 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider>
-      <Auth0Provider
-         domain="dev-jska3woj.us.auth0.com"
-         clientId="TfqAbBT5F3Kq5QBmKFnIFC8fIeuVeaH8"
-         redirectUri={window.location.origin}
-      >
+    <Auth0Provider
+    domain="dev-7ssh-aa4.us.auth0.com"
+    clientId="AfMjq2o1H91jiwBayQIEVSLxyF5Kf6yJ"
+    redirectUri={window.location.origin}
+  >
         <App />
       </Auth0Provider>
     </ChakraProvider>
