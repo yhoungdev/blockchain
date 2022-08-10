@@ -4,6 +4,7 @@ import { useState , useEffect } from "react";
 import { postData } from '../../Utils/Request';
 import {BiImageAdd} from 'react-icons/bi';
 import Inputs from "../../components/Inputs";
+import { toast } from 'react-toastify';
 
 
 const AdminHome = () => {
@@ -19,23 +20,47 @@ const AdminHome = () => {
     const [socialLinks , setSocialLinks ] = useState()
     const [imageTitle , setImageTitle ] = useState()
 
+        //handle image upload 
+        const handleImageUpload = (e) => {
+
+            const imageItem = e.target.files[0]
+            setImage(imageItem)
+            setImageTitle(imageItem.name)
+
+        }
+
     const upload = async () => {
 
         setLoaded(true)
 
+        const formData = new FormData()
 
-        const payload = {
-            title: title, 
-            description: description,
-            tokenContract: tokenContract,
-            links: setLinks,
-            image: image,
-            linkToTokenomics : tokenomics,
-            socialLinks: socialLinks
-        }
+       
+        formData.append('image', image)
+        formData.append('title', imageTitle)
+        formData.append('description', description)
+        formData.append('tokenContract', tokenContract)
+        formData.append('links', links)
+        formData.append('tags', tags)
+        formData.append('tokenomics', tokenomics)
+        formData.append('socialLinks', socialLinks)
+       
+        
+
+
+        // const payload = {
+        //     image: image,
+        //     title: title, 
+        //     description: description,
+        //     tokenContract: tokenContract,
+        //     links: setLinks,
+            
+        //     linkToTokenomics : tokenomics,
+        //     socialLinks: socialLinks
+        // }
 
         try {
-            const request = await postData('/post/create', payload , {
+            const request = await postData('/post/create', formData , {
                 headers : {
                     'Authorization' : `Bearer ${localStorage.getItem('auth-token')}`
                 }
@@ -49,13 +74,7 @@ const AdminHome = () => {
 
     }
 
-    //handle image upload 
-    const handleUpload = ( e ) => {
-        const item = e.target.files[0];
-        setImageTitle(item.name)
-        //send image to endpoint 
-        setImage(item)
-    }
+
 
     return (
         <>
@@ -72,7 +91,7 @@ const AdminHome = () => {
                                 <center><Text ><BiImageAdd size={'4em'}/> </Text></center>
                             </FormLabel>
                             <Text fontSize={'md'} my={'1em'} textAlign={'center'}> {imageTitle ? imageTitle : 'Upload project image' } </Text >
-                            <Input display={'none'} accept={'image/*'} type={'file'} id={'upload'} onChange={handleUpload} />
+                            <Input display={'none'} accept={'image/*'} type={'file'} id={'upload'} onChange={handleImageUpload}  />
 
                         </FormControl>
 
@@ -80,10 +99,25 @@ const AdminHome = () => {
 
                         <FormControl >
                             <Flex gap={'1em'} flexDir={['column' , 'row']}>
-                             <Inputs type={'title '} placeholder={'Project'} onChange={ e => setTitle(e.target.value)}/>
+                             <Inputs type={'text '} placeholder={'Project Title'} onChange={ e => setTitle(e.target.value)}/>
                              <Inputs type={' text '} placeholder={' Contract Address '} onChange={ e => setTitle(e.target.value)}/>
+                             
+                            </Flex>
+
+                            <Flex gap={'1em'} flexDir={['column' , 'row']}>
+                             <Inputs type={'text '} placeholder={'Token'} onChange={ e => setTokenContract(e.target.value)}/>
+                             <Inputs type={' text '} placeholder={' Links '} onChange={ e => setLinks(e.target.value)}/>
+                             
                             </Flex>
                         </FormControl>
+
+                        <Flex gap={'1em'} flexDir={['column' , 'row']}>
+                             <Inputs type={'title '} placeholder={'Description'} onChange={ e => setDescription(e.target.value)}
+                                h={'50%'}
+                             />
+                             
+                             
+                        </Flex>
 
                         <Box display={'flex'} justifyContent={'center'} my={'2em'}>
                             <Button isLoading={loaded }
@@ -92,6 +126,8 @@ const AdminHome = () => {
                                 loadingText={'Uploading Project...'}
                                 bg={'blue.500'} color={'#fff'} py={'1.5em'}>Upload Project</Button>
                         </Box>
+
+                        
 
                     </form>
                    </Box>
