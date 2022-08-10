@@ -9,20 +9,20 @@ import Homepage from './Pages/Homepage';
 import ProjectView from './Pages/ProjectView';
 import NotFound from './Pages/NotFound/NotFound';
 import { useAuth0 } from '@auth0/auth0-react';
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
+import AdminLogin from './Pages/Admin/Admins Auth/AdminLogin';
+import CreateAdmin from './Pages/Admin/Admins Auth/AdminSignup';
+
 function App() {
+  
 
-
-
- 
-
- 
 
   return (
     <div className="App">
-        
+
+        <ToastContainer/>  
 
         <Router>
           <Routes>
@@ -33,6 +33,9 @@ function App() {
             <Route path='*' element={<NotFound/>} />
 
             <Route path='/user/admin/upload ' element={<UploadProject />} />
+
+            <Route path='/user/admin/login' element={<AdminLogin />} />
+            <Route path='/createAdmin' element={<CreateAdmin />} />
           </Routes>
         </Router>
 
