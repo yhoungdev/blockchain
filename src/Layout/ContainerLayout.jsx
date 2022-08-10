@@ -4,7 +4,7 @@ const ContainerLayout = ( { children } ) => {
     return (
         <>
         
-            <Box width={['100%']} h={''} bg={'var(--primary)'}>
+            <Box width={['100%']} h={'120vh'} bg={'var(--primary)'}>
              
              
                 <Container maxW={['100%' , '80%']}>

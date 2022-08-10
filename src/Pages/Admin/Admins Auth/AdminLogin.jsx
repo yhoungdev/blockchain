@@ -3,9 +3,10 @@ import Inputs from '../../../components/Inputs';
 import { Box, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { postData } from '../../../Utils/Request';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
+    const navigate = useNavigate()
 
     const [loader , setLoader ] = useState(false);
     const [email , setEmail ] = useState('');
@@ -27,6 +28,10 @@ const AdminLogin = () => {
                if(response.response.token) {
                   //set item to localStorage 
                   localStorage.setItem('auth-token',response.response.token)
+                  //set Time out
+                  setTimeout(()=>{
+                    navigate('/home')
+                  }, 1500)
                } 
         } catch ( error ) {
             
