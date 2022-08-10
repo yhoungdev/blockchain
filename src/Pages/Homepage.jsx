@@ -13,7 +13,7 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
 
@@ -21,7 +21,7 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
         
@@ -30,7 +30,7 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
         
@@ -38,16 +38,7 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
-            route: '/home/galacticops'
-        } ,
-        
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
         
@@ -56,7 +47,7 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
         
@@ -65,7 +56,16 @@ const Homepage = () => {
             name: 'GalacticOps',
             description: 'An Network for NFT collections and findings ',
             rating: 4.5,
-            image: 'https://nft-page-nine.vercel.app/assets/nft.e11acf46.gif',
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
+            route: '/home/galacticops'
+        } ,
+        
+
+        {
+            name: 'GalacticOps',
+            description: 'An Network for NFT collections and findings ',
+            rating: 4.5,
+            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
             route: '/home/galacticops'
         } ,
         

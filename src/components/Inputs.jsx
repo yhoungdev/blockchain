@@ -10,7 +10,9 @@ const Inputs = ({
                 <>
 
                     <FormControl my={'1em'}>
-                      <Input variant={'filled'} py={'1.5em'} placeholder={placeholder} type={ type}  />
+                      <Input variant={'filled'} py={'1.5em'} placeholder={placeholder} type={ type}  
+                        onChange={onChange} />
+                  
                     </FormControl>
                 
                 </>
