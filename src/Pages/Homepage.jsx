@@ -9,72 +9,10 @@ import NoItem from "./NotItem";
 import axios from 'axios';
 import { fetchData } from '../Utils/Request';
 
+
 const Homepage = () => {
 
-    const dapps = [
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-
-        {
-            name: 'GalacticOps',
-            description: 'An Network for NFT collections and findings ',
-            rating: 4.5,
-            image: 'https://ik.imagekit.io/bayc/assets/ape1.png',
-            route: '/home/galacticops'
-        } ,
-        
-        
-        
-    ]
+    const [data , setData ] = useState([]);
 
     //initilize the useAuth0 hook
     const navigate = useNavigate();
@@ -96,11 +34,10 @@ const Homepage = () => {
     //make request to Api to get list of items 
     const getDatas = async  () => {
 
-        const  response = await fetchData('/post/all' , {
-            headers : {
-                'Authorization' : `Bearer ${localStorage.getItem('auth-token')}`
-            }
-        })
+        const  response = await fetchData('/post/all')
+        setData(response.posts)
+        
+        
         
        
 
@@ -128,9 +65,34 @@ const Homepage = () => {
                     gap={'1em'}
                     flexDir= {['column' , 'row']}
                     flexWrap = {'wrap'}
-                >
+                    >
                     
-                    <NoItem/>
+                   
+
+                     {
+                        //check if item is empthy 
+                        data.length > 0 ? (
+                            <>
+                                {data.map((item , index)=>{
+
+
+                        return (
+                                    <ProjectContainer key={index} item={item}
+                                    image={item.imageUrl}
+                                    description={item.description}
+                                    />
+                                    )
+                                })
+                            }   
+                            </>
+                            ) : (
+                                <>
+                                   <Box >
+                                        <NoItem/>
+                                   </Box>
+                                </>
+                            )
+                     }
                 </Box>
 
             </ContainerLayout>
