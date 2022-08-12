@@ -5,9 +5,11 @@ import { postData } from '../../Utils/Request';
 import {BiImageAdd} from 'react-icons/bi';
 import Inputs from "../../components/Inputs";
 import { toast } from 'react-toastify';
-
+import { useNavigate } from "react-router-dom";
 
 const AdminHome = () => {
+
+    const navigate = useNavigate()
 
     const [loaded , setLoaded ] = useState(false )
     const [title , setTitle ] = useState()
@@ -48,17 +50,6 @@ const AdminHome = () => {
         
 
 
-        // const payload = {
-        //     image: image,
-        //     title: title, 
-        //     description: description,
-        //     tokenContract: tokenContract,
-        //     links: setLinks,
-            
-        //     linkToTokenomics : tokenomics,
-        //     socialLinks: socialLinks
-        // }
-
         try {
             const request = await postData('/post/create', formData , {
                 headers : {
@@ -74,6 +65,23 @@ const AdminHome = () => {
 
     }
 
+
+    //now check if user is Authenticate ot not 
+    const userAuth = () => {
+        //get user auth token from localStorage 
+        const authToken = localStorage.getItem('auth-token');
+
+        if(!authToken) {
+            navigate('/')
+        }
+
+
+
+    }
+
+    useEffect(()=> {
+        userAuth()
+    }, [])
 
 
     return (
