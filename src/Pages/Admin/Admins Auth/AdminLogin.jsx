@@ -30,7 +30,7 @@ const AdminLogin = () => {
                   localStorage.setItem('auth-token',response.response.token)
                   //set Time out
                   setTimeout(()=>{
-                    navigate('/home')
+                    navigate('/admin/home')
                   }, 1500)
                } 
         } catch ( error ) {

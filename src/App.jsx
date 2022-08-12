@@ -15,14 +15,25 @@ import { useEffect } from 'react';
 import AdminLogin from './Pages/Admin/Admins Auth/AdminLogin';
 import CreateAdmin from './Pages/Admin/Admins Auth/AdminSignup';
 import AdminHome from './Pages/Admin/AdminHome';
+import Loader from './components/Loader';
+import { Box } from '@chakra-ui/react';
 
 function App() {
   
+  const [loaded , setLoaded ] = useState()
 
+  useEffect(() => {
+    
+    setTimeout(() => {
+      setLoaded('none')
+    }, 1500)
 
+  }, [])
   return (
     <div className="App">
-
+        <Box display={loaded}>
+          <Loader/>
+        </Box>
         <ToastContainer/>  
 
         <Router>
