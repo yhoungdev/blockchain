@@ -80,6 +80,7 @@ const Homepage = () => {
                                     <ProjectContainer key={index} item={item}
                                     image={item.imageUrl}
                                     description={item.description}
+                                    onClick={ e => navigate (`/preview/${item._id}`)}
                                     />
                                     )
                                 })

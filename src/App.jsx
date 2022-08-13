@@ -41,7 +41,7 @@ function App() {
             <Route path="/" element={<SignIn />} />
             <Route path="/signup" element={< SignUp />} />
             <Route path='/home' element={<Homepage/>} />
-            <Route path='/home/:id' element={<ProjectView/>} />
+            <Route path='/preview/:id' element={<ProjectView/>} />
             <Route path='*' element={<NotFound/>} />
 
             <Route path='/user/admin/upload' element={<UploadProject />} />

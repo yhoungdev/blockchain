@@ -1,7 +1,7 @@
 import { Box , Image , Flex, Text, Button } from "@chakra-ui/react";
 import {AiFillStar} from 'react-icons/ai'
 
-const ProjectContainer =({name , image , rating , description , projectName}) => {
+const ProjectContainer =({name , image , rating , description , onClick}) => {
     return (
         <>
 
@@ -21,7 +21,7 @@ const ProjectContainer =({name , image , rating , description , projectName}) =>
                     <Text>{description}</Text>
                 </Box>
 
-                <Button my={'0.5em'} w={'100%'} py={'1.7em'}>Checkout {projectName}</Button>
+                <Button my={'0.5em'} w={'100%'} py={'1.7em'} onClick={onClick}>View Project</Button>
             </Box>
         
         </>
