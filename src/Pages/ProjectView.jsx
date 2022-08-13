@@ -1,16 +1,22 @@
-import { Box , Button, Input, Text} from "@chakra-ui/react";
+import { Box , Button, Container , Input,Image ,  Text} from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ContainerLayout from "../Layout/ContainerLayout";
 import { useNavigate , useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import NotAuthenticate from './NotFound/NotAuthenticated';
 import { useState , useEffect } from "react";
-import axios from 'axios';
 import { fetchData } from "../Utils/Request";
 
 const ProjectView = () => {
 
     const [loading , setLoadaing ] = useState(false)
+    const [ description , setDescription  ] = useState('')
+    const [ title , setTitle ] = useState('')
+    const [ image , setImage ] = useState('')
+    const [ contract , setContract ] = useState('')
+    const [ link , setLink ] = useState('')
+    const [loader , setLoader ] = useState(false )
+
 
     const {isAuthenticated, user} = useAuth0();
 
@@ -23,7 +29,24 @@ const ProjectView = () => {
     //function to handle get 
     const getProject = async () => {
         
-        const  response = await fetchData(`/post/all/${id}`)
+        const  response = await fetchData(`/post/${id}`)
+        const data = response.post
+
+        setImage(data.imageUrl);
+        setDescription(data.description);
+        setContract(data.tokenContract);
+        setTitle(data.title);
+
+
+    }
+
+    //create review 
+    const createReview = async () => {
+        setLoader(true)
+        setTimeout(() => {
+            setLoader(false )
+        } , 2500 )
+
     }
 
 
@@ -36,13 +59,13 @@ const ProjectView = () => {
         <>
 
             <Header />
-            <ContainerLayout>
+            <Container maxW={'100%'}>
               {
                 //check if user is authenticated
                 !isAuthenticated ? (
                     <>
 
-            <Box display={'flex'} width={'70%'} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
+            <Box display={'flex'} width={['100%','60%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
               
                 <Box py={'2em'} px={['', '10em']} w={['100%' , '85%']}
                 bg={'#fff'} mx={'auto'}>
@@ -50,20 +73,31 @@ const ProjectView = () => {
 
                     <Box my={'2em'}>
 
-                        <Text fontWeight={'bold'}>
-                            This is the title 
-                        </Text>
+                        <Box>
+                            <Image src={image} />
+                        </Box>
 
-                        <Text>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique voluptas nulla possimus eligendi laudantium corporis error exercitationem obcaecati, cupiditate et, natus consequatur esse molestias illum fugit est suscipit perferendis quibusdam.
-                        </Text>
+                       <Box my={'1em'}>
+                           <Text fontWeight={'bold'}>
+                                {title}
+                            </Text>
+
+                            <Text>
+                                <b>Token Contract:</b> {contract}
+                            </Text>
+                            <Text>
+                            {description}
+                            </Text>
+                       </Box>
 
                     </Box>
 
                     <Box my={'2em'}>
                         <Input type={'text'} py={'1.5em'} variant={'filled'} placeholder={'Add Comment'} />
                         <Button my={'1em'} py={'1.5em'} bg={'blue.500'} color={'#fff'}
-                        isLoading={loading } loadingText={'Adding Comment...'}>Add Comment </Button>
+                        isLoading={loader } loadingText={'Adding Comment...'} 
+                        _hover={{}} 
+                        onClick={createReview}>Add Comment </Button>
                     </Box>
                 </Box>
               </Box>
@@ -75,7 +109,7 @@ const ProjectView = () => {
                     </>
                 )
               }
-            </ContainerLayout>
+            </Container>
 
         </>
     )
