@@ -1,4 +1,4 @@
-import { Box , Button, Container , Input,Image ,  Text} from "@chakra-ui/react";
+import { Box , Button,  Container , Input,Image ,  Text, Select} from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ContainerLayout from "../Layout/ContainerLayout";
 import { useNavigate , useParams } from "react-router-dom";
@@ -93,6 +93,17 @@ const ProjectView = () => {
                     </Box>
 
                     <Box my={'2em'}>
+                        <Input type={'text'} my={"0.5em"} py={'1.5em'} variant={'filled'} placeholder={'Name'} />
+                        
+                        <Box>
+                            <FormLabel>Rate Project </FormLabel>
+                            <Select size={'lg'}>
+                                <option> Excellent </option>
+                                <option> Awesome </option>
+                                <option> Good </option>
+                            </Select>
+                        </Box>
+
                         <Input type={'text'} py={'1.5em'} variant={'filled'} placeholder={'Add Comment'} />
                         <Button my={'1em'} py={'1.5em'} bg={'blue.500'} color={'#fff'}
                         isLoading={loader } loadingText={'Adding Comment...'} 
