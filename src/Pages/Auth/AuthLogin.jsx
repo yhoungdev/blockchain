@@ -2,7 +2,7 @@ import Buttons from "../../components/Buttons"
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
-const LoginButton = () => {
+const LoginButton = ({value}) => {
 
     const {loginWithRedirect} = useAuth0();
     const navigate = useNavigate();
@@ -20,7 +20,7 @@ const LoginButton = () => {
     return (
         <>
         
-            <Buttons value={'Login'}
+            <Buttons value={value}
                 onClick={
                     login
 

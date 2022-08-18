@@ -34,7 +34,7 @@ const DisplayReview = () => {
             <Box>
 
                 {
-                    reviewData <=0 ? 'No Data a' : 
+                    reviewData <=0 ? 'No Review For this project' : 
                         reviewData.map(review => (
                             <>
                                 <ReviewBox userName={review.name} 
