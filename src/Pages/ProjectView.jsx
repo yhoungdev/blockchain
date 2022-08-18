@@ -63,15 +63,17 @@ const ProjectView = () => {
     return (
         <>
 
-            <Header />
-            <Container maxW={'100%'}>
+            <Box mb={'3em'} position={'sticky'} left={0} top={0} right={0} zIndex={999}>
+                <Header />
+            </Box>
+            <Container maxW={'100%'} my={'8em'}>
               {
                 //check if user is authenticated
                 
                 true ? (
                     <>
 
-            <Box display={'flex'} width={['100%','80%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
+            <Box display={'flex'} my={'5em'} width={['100%','80%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
               
                 <Box py={'2em'} px={['', '10em']} w={['100%' , '85%']}
                 bg={'#fff'} mx={'auto'}>
@@ -80,7 +82,7 @@ const ProjectView = () => {
                     <Box my={'2em'}>
 
                         <Box>
-                            <Image src={image} />
+                            <Image src={image} h={'50vh'} w={'100%'}/>
                         </Box>
 
                        <Box my={'1em'}>

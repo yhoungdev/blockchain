@@ -66,9 +66,9 @@ const AdminLogin = () => {
                         Login
                     </Button>
                     </center>
-                   <Link to={"/createAdmin"}>
+                   {/* <Link to={"/createAdmin"}>
                     <Text my={'1em'} textAlign={'center'} fontWeight={'bold'} color={'blue.500'} >Create An Admin</Text>
-                   </Link>
+                   </Link> */}
                 </form>
                 </Box>
             </AuthLayout>

@@ -25,8 +25,8 @@ const Header = () => {
     return (
         <>
 
-            <Box px={['','10em']} mb={'em'}>
-            <Flex justifyContent={'space-between'}  py={'0.5em'} bg={'#fff'}>
+            <Box px={['','10em']} mb={'1em'} >
+            <Flex justifyContent={'space-between'} mb={'2em'} py={'0.5em'} bg={'#fff'}>
                 
                 
                 <Box>
