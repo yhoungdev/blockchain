@@ -46,7 +46,7 @@ const AdminLogin = () => {
         <>
 
             <AuthLayout>
-                <Box w={['' , '90%']} mx={'auto'}>
+                <Box w={['' , '80%']} mx={'auto'}>
                 <Box>
                     <center>
                       <MainLogo/>
@@ -67,7 +67,7 @@ const AdminLogin = () => {
                     <Button isLoading={loader }
                     _hover={{}}
                     bg={'blue.500'} color={'white'}
-                    px={'4em'} py={'1.6em'} loadingText={'Loggin In...'} onClick={login}>
+                    px={'4em'} my={'1em'} py={'1.6em'} loadingText={'Loggin In...'} onClick={login}>
                         Login
                     </Button>
                     </center>
