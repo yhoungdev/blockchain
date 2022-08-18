@@ -1,6 +1,6 @@
 import AuthLayout from "../../../Layout/AuthLayout";
 import Inputs from '../../../components/Inputs';
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Avatar, Box,Flex, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { postData } from '../../../Utils/Request';
 import { Link, useNavigate } from "react-router-dom";
@@ -51,6 +51,11 @@ const AdminLogin = () => {
                     <center>
                       <MainLogo/>
                     </center>
+
+                    <Flex justifyContent={'center'} my={'2em'}>
+                        <Avatar size={['lg','lg']}/>
+                    </Flex>
+
                     <Text fontWeight={'bold'}>Hey, Yo, Welcome Back 👋</Text>
                    
                 </Box>
@@ -66,9 +71,9 @@ const AdminLogin = () => {
                         Login
                     </Button>
                     </center>
-                   <Link to={"/createAdmin"}>
+                   {/* <Link to={"/createAdmin"}>
                     <Text my={'1em'} textAlign={'center'} fontWeight={'bold'} color={'blue.500'} >Create An Admin</Text>
-                   </Link>
+                   </Link> */}
                 </form>
                 </Box>
             </AuthLayout>

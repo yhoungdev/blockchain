@@ -5,6 +5,7 @@ import { useState } from "react";
 import { postData } from '../../../Utils/Request';
 import { MdLocalGasStation } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import MainLogo from '../../../components/MainLogo';
 
 
 const CreateAdmin = () => {
@@ -50,8 +51,9 @@ const CreateAdmin = () => {
             <AuthLayout>
                
                 <Box w={['' , '90%']} mx={'auto'}>
+                <center><MainLogo/></center>
                 <Box>
-                    <Text fontWeight={'bold'}>Create Admin</Text>
+                    <Text fontWeight={'bold'}>Create Admin 👋</Text>
                 </Box>
                 <form>
                     <Inputs type={'text'} placeholder={'Name'} onChange = { e => setName(e.target.value)}/>
