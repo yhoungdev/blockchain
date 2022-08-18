@@ -4,6 +4,7 @@ import { Box, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { postData } from '../../../Utils/Request';
 import { Link, useNavigate } from "react-router-dom";
+import MainLogo from "../../../components/MainLogo";
 
 const AdminLogin = () => {
     const navigate = useNavigate()
@@ -47,8 +48,11 @@ const AdminLogin = () => {
             <AuthLayout>
                 <Box w={['' , '90%']} mx={'auto'}>
                 <Box>
-                    <Text fontWeight={'bold'}>Hey, Welcome Back</Text>
-                    <Text fontWeight={'bold'}>Log in your details</Text>
+                    <center>
+                      <MainLogo/>
+                    </center>
+                    <Text fontWeight={'bold'}>Hey, Yo, Welcome Back 👋</Text>
+                   
                 </Box>
                 <form>
                     <Inputs type={'email'} placeholder={'Email'} onChange = { e => setEmail(e.target.value)}/>
@@ -63,7 +67,7 @@ const AdminLogin = () => {
                     </Button>
                     </center>
                    <Link to={"/createAdmin"}>
-                    <Text my={'1em'} textAlign={'center'} >Create An Admin</Text>
+                    <Text my={'1em'} textAlign={'center'} fontWeight={'bold'} color={'blue.500'} >Create An Admin</Text>
                    </Link>
                 </form>
                 </Box>
