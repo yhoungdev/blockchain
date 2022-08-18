@@ -28,24 +28,7 @@ const Hero = () => {
             <Logo/>
 
             <Box>
-              <Box display={["none", "block"]}>
-                <UnorderedList
-                  listStyleType="none"
-                  display={"inline-flex"}
-                  gap={"2em"}
-                >
-                  <Link to="/login">
-                  <Button
-                  bg={'#191919'}
-                  color={'#fff'}
-                  _hover = {{ 
-                    backdround: ' #191919'
-                  }}
-
-                   > Login </Button>
-                  </Link>
-                </UnorderedList>
-              </Box>
+              
 
               <Box display={["block", "none"]}>
                  <Link to={'/login'}>
@@ -75,7 +58,7 @@ const Hero = () => {
                 width={["", "70%"]}
                 mx={"auto"}
               >
-                The Leading Decentralized platform on SmartCHH
+                The Leading Decentralized platform on SmartBCH
               </Text>
 
               <Text my={"2em"} textAlign={"center"}>

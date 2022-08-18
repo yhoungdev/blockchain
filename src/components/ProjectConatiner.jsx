@@ -12,7 +12,7 @@ const ProjectContainer =({name , image , rating , description , onClick}) => {
              >
                 
                 <Box mb={'1em'}>
-                 <Image src={image} />
+                 <Image src={image}  h={'30vh'} width={'100%'}/>
                 </Box>
                 <Text fontWeight={'bold'}> {name}</Text>
                 <Box display={'flex'} alignItems={'center'} gap={'1em'}> <AiFillStar fill="#fdff0c"/><Text>{rating}</Text></Box>
