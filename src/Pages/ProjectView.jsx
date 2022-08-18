@@ -1,4 +1,4 @@
-import { Box , Button,  Container , Input,Image ,  Text, Select} from "@chakra-ui/react";
+import { Box , Button,  Container , FormLabel, Input,Image ,  Text, Select, useDisclosure} from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ContainerLayout from "../Layout/ContainerLayout";
 import { useNavigate , useParams } from "react-router-dom";
@@ -6,8 +6,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import NotAuthenticate from './NotFound/NotAuthenticated';
 import { useState , useEffect } from "react";
 import { fetchData } from "../Utils/Request";
+import ReviewModal from "../components/Modals/ReviewModal";
+import DisplayReview from "../components/DisplayReview";
 
 const ProjectView = () => {
+
+    const { isOpen , onClose , onOpen} = useDisclosure();
 
     const [loading , setLoadaing ] = useState(false)
     const [ description , setDescription  ] = useState('')
@@ -16,6 +20,7 @@ const ProjectView = () => {
     const [ contract , setContract ] = useState('')
     const [ link , setLink ] = useState('')
     const [loader , setLoader ] = useState(false )
+    
 
 
     const {isAuthenticated, user} = useAuth0();
@@ -62,7 +67,8 @@ const ProjectView = () => {
             <Container maxW={'100%'}>
               {
                 //check if user is authenticated
-                !isAuthenticated ? (
+                
+                true ? (
                     <>
 
             <Box display={'flex'} width={['100%','60%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
@@ -93,23 +99,11 @@ const ProjectView = () => {
                     </Box>
 
                     <Box my={'2em'}>
-                        <Input type={'text'} my={"0.5em"} py={'1.5em'} variant={'filled'} placeholder={'Name'} />
-                        
-                        <Box>
-                            <FormLabel>Rate Project </FormLabel>
-                            <Select size={'lg'}>
-                                <option> Excellent </option>
-                                <option> Awesome </option>
-                                <option> Good </option>
-                            </Select>
-                        </Box>
-
-                        <Input type={'text'} py={'1.5em'} variant={'filled'} placeholder={'Add Comment'} />
-                        <Button my={'1em'} py={'1.5em'} bg={'blue.500'} color={'#fff'}
-                        isLoading={loader } loadingText={'Adding Comment...'} 
-                        _hover={{}} 
-                        onClick={createReview}>Add Comment </Button>
+                        <DisplayReview/>
                     </Box>
+
+                    <Button onClick={onOpen}> Add Review </Button>
+                    <ReviewModal isOpen={isOpen} onClose={onClose} />
                 </Box>
               </Box>
                     

@@ -34,17 +34,16 @@ const SignIn =() => {
                             <Box>
 
                                 
-                                <Inputs type={'email'} placeholder={' Email  '}/>
-                                <Inputs placeholder={' Password  '} type={'password'}/>
+                               
 
                                 <center>
-                                    <Buttons value={'Sign In'}
+                                    {/* <Buttons value={'Sign In'}
                                         isLoading={false}
                                         loadingText={'Logging In...'}
                                     
-                                    />    
+                                    />     */}
 
-                                    <Text my={'1em'}>Or </Text>
+                                
                                     <LoginButton />
                                 </center>
 
