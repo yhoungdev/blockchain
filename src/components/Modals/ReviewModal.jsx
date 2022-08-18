@@ -32,6 +32,7 @@ const ReviewModal = ({isOpen , onClose }) => {
         
         try {
             const response = await postData('/review/create', payloads);
+            window.location.reload();
             setLoader(false)
         } catch (error) {
 

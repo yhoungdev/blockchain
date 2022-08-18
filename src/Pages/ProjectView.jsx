@@ -71,7 +71,7 @@ const ProjectView = () => {
                 true ? (
                     <>
 
-            <Box display={'flex'} width={['100%','60%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
+            <Box display={'flex'} width={['100%','80%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
               
                 <Box py={'2em'} px={['', '10em']} w={['100%' , '85%']}
                 bg={'#fff'} mx={'auto'}>
@@ -98,7 +98,10 @@ const ProjectView = () => {
 
                     </Box>
 
-                    <Box my={'2em'}>
+                    <Text fontWeight={'bold'}>Reviews</Text>
+                    
+                    <Box my={'2em'} overflow={''}>
+                        
                         <DisplayReview/>
                     </Box>
 

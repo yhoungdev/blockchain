@@ -15,7 +15,8 @@ const DisplayReview = () => {
 
         try {
             const response =  await fetchData(`/review/all/${id}`)
-            setReviewData(response.reviews)
+            setReviewData(response.reviews.slice(12))
+            console.log(response.reviews.slice(10))
         
         } catch (error) {
             console.log(error)
@@ -33,12 +34,14 @@ const DisplayReview = () => {
             <Box>
 
                 {
-                    reviewData.map(review => (
-                        <>
-                            <ReviewBox userName={review.name} 
-                             comment={review.comment} rating={review.rating}/>
-                        </>
-                    ))
+                    reviewData <=0 ? 'No Data a' : 
+                        reviewData.map(review => (
+                            <>
+                                <ReviewBox userName={review.name} 
+                                 comment={review.comment} rating={review.rating}/>
+                            </>
+                        ))
+                    
                 }
 
             </Box>
