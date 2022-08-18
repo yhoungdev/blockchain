@@ -7,5 +7,27 @@
 
 :root {
   --primary:  #EEF3FF;
-  ;
+  --primary-font:  'Clash Grotesk', sans-serif;
+  --secondary-font: 'Satoshi', sans-serif;
+  --default-font: 'Nunito', sans-serif;
+
+}
+
+
+@keyframes dangle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.dangle {
+  /* call animation */
+  animation: dangle 1s ease-in-out infinite;
 }
