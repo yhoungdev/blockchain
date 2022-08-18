@@ -7,6 +7,9 @@ import LoginButton from "./AuthLogin";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import Logo from '../../components/Logo';
+import Hero from "../Home/Hero";
+import Section from "../Home/Section";
 
 const SignIn =() => {
 
@@ -23,39 +26,47 @@ const SignIn =() => {
     return (
         <>
         
-            <ContainerLayout>
-                <AuthLayout>
-                    <Box>
-                         <Text fontWeight={'bold'}> Welcome Back </Text>
-                         <Text> Enter your credentials </Text>
-
-
-                        
-                            <Box>
-
-                                
-                               
-
-                                <center>
-                                    {/* <Buttons value={'Sign In'}
-                                        isLoading={false}
-                                        loadingText={'Logging In...'}
-                                    
-                                    />     */}
-
-                                
-                                    <LoginButton />
-                                </center>
-
-
-                            </Box>
-                         
-                    </Box>
-                </AuthLayout>
-            </ContainerLayout>
+           <Hero/>
+           <Section/>
 
         </>
     )
 }
 
 export default SignIn;
+
+
+// <AuthLayout>
+
+// <Box>
+
+//    <center>
+//      <Logo/>
+//    </center>
+
+     
+     
+
+        
+    
+//         <Box>
+
+            
+           
+
+//             <center>
+//                 {/* <Buttons value={'Sign In'}
+//                     isLoading={false}
+//                     loadingText={'Logging In...'}
+                
+//                 />     */}
+
+            
+//                 <LoginButton />
+//             </center>
+
+
+//         </Box>
+     
+// </Box>
+// </AuthLayout>
