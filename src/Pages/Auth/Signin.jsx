@@ -10,6 +10,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Logo from '../../components/Logo';
 import Hero from "../Home/Hero";
 import Section from "../Home/Section";
+import LightBox from "../Home/Logs";
+import Divider from "../Home/Divider";
 
 const SignIn =() => {
 
@@ -28,6 +30,8 @@ const SignIn =() => {
         
            <Hero/>
            <Section/>
+           <LightBox/>
+           <Divider />
 
         </>
     )
