@@ -4,7 +4,7 @@ const ReviewBox = ({userName , rating , comment} ) => {
 
     return (
         <>
-            <Box my={'1em'} border={'1px solid gray'} p={'1em'}>
+            <Box my={'1em'} border={''} p={'1em'} boxShadow={'md'}>
                 <Text fontWeight={'bold'}> {userName} </Text>
                 <Text my={'0.5em'}> {comment} </Text>
                 <Text display={'flex'} alignItems={"center"}> Rate: {rating ? (

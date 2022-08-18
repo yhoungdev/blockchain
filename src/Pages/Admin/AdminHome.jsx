@@ -93,6 +93,7 @@ const AdminHome = () => {
                 >
                    <Box my={'3em'} bg={'#fff'} py={'2em'} px={'2em'}>
                          <form >
+                            <Text fontWeight={'bold'} textAlign={'center'} my={'0.5em'}> Create A Project </Text>
 
                         <FormControl>
                             <FormLabel fontWeight={'bold'} htmlFor={'upload'} w={['40%','30%']} mx={'auto'} borderRadius={'md'} px={'1em'} py={'2em'} bg={'#80808017}'} textAlign={'center'}> 
