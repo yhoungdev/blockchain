@@ -5,9 +5,10 @@ const LightBox  = () => {
 
     const items = [
         {
-            title : 'Create Microblog',
+            title : 'View Project Reviews',
             description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ad corrupti odio dolor. Nihil itaque, nulla facere neque cum quos quisquam doloremque similique voluptate vel harum sequi dignissimos beatae minima?',
-            icon : 'https://res.cloudinary.com/dhkccnvyn/image/upload/v1659286476/secuWallet/Rectangle_4_zcwamn.svg',
+            icon : 'https://res.cloudinary.com/dhkccnvyn/image/upload/v1660839661/Rectangle_2_zlue6g.svg',
+            width : '15%',
             style : {
                 background : 'rgb(220 106 106 / 5%)',
             }
@@ -55,7 +56,7 @@ const LightBox  = () => {
                                     <Box  style={items.style} px={'1em'} py={'1em'}
                                         borderRadius={'10px'}
                                     >
-                                        <Image w={['30%','25%']} src={items.icon} mx={'auto'} />
+                                        <Image w={['30%',items.width ? items.width : '25%']} src={items.icon} mx={'auto'} />
                                         <Text my={'1em'} fontWeight={'black'}>{items.title}</Text>
                                         <Text>{items.description}</Text>
                                     </Box>
