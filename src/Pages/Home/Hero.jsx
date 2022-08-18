@@ -20,7 +20,9 @@ import LoginButton from '../Auth/AuthLogin';
 const Hero = () => {
   return (
     <>
-      <Box py="1em" position={'relative'} bg={"black"} h="100vh" color={"#fff"}>
+      <Box py="1em"  bg={"black"} bgImage={'https://assets.website-files.com/620e7cf70a42fe89735b1b17/625de5f777c2b224b2bbb792_section-3-background.jpg'}
+      bgSize={'cover'}
+      position={'relative'} h="100vh" color={"#fff"}>
         <ContainerLayout>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
             <Logo/>

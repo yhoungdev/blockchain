@@ -56,7 +56,7 @@ const LightBox  = () => {
                                     <Box  style={items.style} px={'1em'} py={'1em'}
                                         borderRadius={'10px'}
                                     >
-                                        <Image w={['30%',items.width ? items.width : '25%']} src={items.icon} mx={'auto'} />
+                                        <Image className="shake" w={['30%',items.width ? items.width : '25%']} src={items.icon} mx={'auto'} />
                                         <Text my={'1em'} fontWeight={'black'}>{items.title}</Text>
                                         <Text>{items.description}</Text>
                                     </Box>
