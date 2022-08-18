@@ -19,15 +19,15 @@ const Homepage = () => {
     const { user, isAuthenticated } = useAuth0();
 
     useEffect(()=> {
-        //check if use is Authenticate 
-        // if(!isAuthenticated){
+        // check if use is Authenticate 
+        if(!isAuthenticated){
 
-        //     //redirect to login page
-        //     navigate('/');
+            //redirect to login page
+            navigate('/');
 
-        // } else {
-        //     //if user is Authenticated
-        // }
+        } else {
+            //if user is Authenticated
+        }
     },[])
 
 
@@ -55,9 +55,9 @@ const Homepage = () => {
 
             <ContainerLayout>
                
-                <Box my={'2em'}>
+                <Box>
 
-                    <Text fontWeight={'bold'} fontSize={'1.5em'}>List of Dapps</Text>
+                    <Text fontWeight={'bold'} py={'1em'} fontSize={'1.5em'}>List of Dapps</Text>
                     <Text my={'0.5em'}> Project contents and Items  </Text>
                 </Box>
  

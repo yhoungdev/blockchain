@@ -6,7 +6,7 @@ const Section = () => {
     return (
         <>
 
-           <Box h={'100vh'} bg={"#fcf3e0"} py={'5em'} my={'1em'}>
+           <Box h={'100vh'} bg={"#fcf3e0"} py={'5em'} >
            <ContainerLayout>
                 <Box my={'2em'}>
 

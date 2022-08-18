@@ -20,7 +20,7 @@ const ReviewModal = ({isOpen , onClose }) => {
 
     const payloads = {
 
-        "name":name,
+        "name":localStorage.getItem('userName'),
         "rating":parseInt(rating),
         "comment":comment,
         "postId": id
@@ -52,21 +52,26 @@ const ReviewModal = ({isOpen , onClose }) => {
                     <ModalBody>
                     <ModalHeader>Add Review</ModalHeader>
                     <Box my={'2em'}>
-                        <Input type={'text'} my={"0.5em"} py={'1.5em'} variant={'filled'} placeholder={'Name'} 
-                        onChange={ e => setName(e.target.value)}/>
+                        
+                        <Text my={'1em'}> <b>{localStorage.getItem('userName')}</b> add your review </Text>
                         
                         <Box my={'0.5em'}>
                             <FormLabel>Rate Project </FormLabel>
                             <Select size={'lg'} onChange={ e => setRating(e.target.value)}>
-                                <option value={4}> Excellent </option>
+                                <option>Rate Project</option>
+                                <option value={5}>Excellent</option>
+                                <option value={4}> Amazing </option>
                                 <option value={3}> Awesome </option>
                                 <option value={2}> Good </option>
                                 <option value={1}>Bad</option>
                             </Select>
                         </Box>
 
-                        <Input type={'text'} py={'1.5em'} variant={'filled'} placeholder={'Add Comment'}
-                        onChange={ e => setComment(e.target.value)} />
+                       <Box my={'1em'}>
+                        <FormLabel fontWeight={'medium'}>Add your comment</FormLabel>
+                            <Input type={'text'} py={'1.5em'} variant={'filled'} placeholder={'Add Comment'}
+                            onChange={ e => setComment(e.target.value)} h={'20vh'} />
+                       </Box>
                        
                         <center>
                             <Button my={'1em'} py={'1.5em'} bg={'blue.500'} color={'#fff'}
