@@ -1,4 +1,4 @@
-import { Box , Button, Flex,  Container , FormLabel, Input,Image ,  Text, Select, useDisclosure} from "@chakra-ui/react";
+import { Box , Button, Flex,  Container , FormLabel, Input,Image ,  Text, Select, useDisclosure, UnorderedList, ListItem} from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ContainerLayout from "../Layout/ContainerLayout";
 import { useNavigate , useParams } from "react-router-dom";
@@ -9,6 +9,10 @@ import { fetchData } from "../Utils/Request";
 import ReviewModal from "../components/Modals/ReviewModal";
 import DisplayReview from "../components/DisplayReview";
 import {BiCommentError} from 'react-icons/bi';
+import { FaEye } from "react-icons/fa";
+import {BsGlobe} from 'react-icons/bs';
+import {BiCoinStack} from 'react-icons/bi';
+import {FaTwitter} from 'react-icons/fa';
 
 const ProjectView = () => {
 
@@ -19,12 +23,25 @@ const ProjectView = () => {
     const [ title , setTitle ] = useState('')
     const [ image , setImage ] = useState('')
     const [ contract , setContract ] = useState('')
-    const [ link , setLink ] = useState('')
     const [loader , setLoader ] = useState(false )
+    const [tags , setTags ] = useState('')
+    const [socialLink , setSocialLink ] = useState('')
+    const [links , setLinks ] = useState('')
+    const [tokenContract , setTokenContract ] = useState('')    
+    const [hide , setHide ] = useState('none')   
     
 
 
     const {isAuthenticated, user} = useAuth0();
+
+    //function to toggle more 
+    const toggle = () => {
+        if(hide === 'none'){
+            setHide('block')
+        } else {
+            setHide('none')
+        }
+    }
 
     const navigate = useNavigate();
 
@@ -42,6 +59,10 @@ const ProjectView = () => {
         setDescription(data.description);
         setContract(data.tokenContract);
         setTitle(data.title);
+        setTags(data.tags);
+        setSocialLink(data.socialLink);
+        setLinks(data.links);
+        setTokenContract(data.tokenContract);
 
 
     }
@@ -87,7 +108,18 @@ const ProjectView = () => {
                         <Box>
                             <Text fontWeight={'bold'} py={'1em'} fontSize={'1.2em'}>{title}</Text>
                             <Text fontSize={'1em'}>{description}</Text>
+                            <Text my={'0.5em'} fontWeight={'bold'} >{tags}</Text>
+
+                           <Box display={'flex'} onClick={toggle} cursor={'pointer'} alignItems={"center"} flexDir={'row'} gap={'0.5em'}> <FaEye/> <Text fontWeight={'bold'}>  View More </Text></Box>
                             
+                            <Box my={'1em'} display={hide}>
+                               <UnorderedList listStyleType={'none'} mx={0}>
+                                    <ListItem>{socialLink}</ListItem>
+                                    <ListItem display={'flex'} alignItems={'center'} gap={'0.5em'}> <BiCoinStack/> {tokenContract}</ListItem>
+                                    <ListItem fontWeight={'bold'} color={'blue.600'} display={'flex'} gap={'0.2em'} alignItems={'center'}> <FaTwitter/> <a href={socialLink} fontWeight={'bold'} color={'blue.500'}>{links}</a> </ListItem>
+                                    <ListItem fontWeight={'bold'} color={'blue.600'} display={'flex'} gap={'0.2em'} alignItems={'center'}> <BsGlobe/> <a href={links} fontWeight={'bold'} color={'blue.500'}>{links}</a> </ListItem>
+                               </UnorderedList>
+                            </Box>
                         </Box>
                     </Flex>
 

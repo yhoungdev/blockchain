@@ -2,7 +2,7 @@ import { Box , Image , Flex, Text, Button } from "@chakra-ui/react";
 import {AiFillStar} from 'react-icons/ai'
 import {FiExternalLink} from 'react-icons/fi'
 
-const ProjectContainer =({name , image , rating , description , onClick}) => {
+const ProjectContainer =({name , image , rating , description ,tags, link, onClick}) => {
     return (
         <>
 
@@ -22,6 +22,8 @@ const ProjectContainer =({name , image , rating , description , onClick}) => {
                 
                 <Box>
                     <Text>{description}</Text>
+
+                    <Text fontWeight={'bold'} my={'0.5em'}>{tags}</Text>
                 </Box>
 
                 <Button my={'0.5em'} w={'100%'} py={'1.7em'}

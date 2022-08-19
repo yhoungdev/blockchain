@@ -30,15 +30,7 @@ const Hero = () => {
             <Box>
               
 
-              <Box display={["block", "none"]}>
-                 <Link to={'/login'}>
-                  <Button
-                  bg={'#191919'}
-                  color={'#fff'}
-
-                   > Login </Button>
-                 </Link>
-              </Box>
+             
             </Box>
           </Flex>
           <Flex

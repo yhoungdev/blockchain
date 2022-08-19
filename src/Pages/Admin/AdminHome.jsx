@@ -13,7 +13,7 @@ const AdminHome = () => {
     const navigate = useNavigate()
 
     const [loaded , setLoaded ] = useState(false )
-    const [title , setTitle ] = useState()
+    const [title , setTitle ] = useState('')
     const [ description , setDescription ] = useState()
     const [ tokenContract , setTokenContract ] = useState()
     const [ links , setLinks ] = useState()
@@ -40,7 +40,7 @@ const AdminHome = () => {
 
        
         formData.append('image', image)
-        formData.append('title', setTitle)
+        formData.append('title', title)
         formData.append('description', description)
         formData.append('tokenContract', tokenContract)
         formData.append('links', links)
@@ -61,6 +61,7 @@ const AdminHome = () => {
             } );
 
             setLoaded(false)
+            console.log(title)
             //window.location.reload()
         } catch ( error ) {
             setLoaded(false )
@@ -131,6 +132,8 @@ const AdminHome = () => {
                             </Flex>
                         </FormControl>
 
+                        
+
                         <Flex gap={'1em'} flexDir={['column' , 'row']}>
                              <Inputs type={'title '} placeholder={'Description'} onChange={ e => setDescription(e.target.value)}
                                 h={'50%'}
@@ -138,6 +141,8 @@ const AdminHome = () => {
                              
                              
                         </Flex>
+
+                        <Text fontWeight={'bold'} textAlign={'center'} color={'blue.600'} cursor={'pointer'} onClick={ e => navigate('/') }>Login as User</Text>
 
                         <Box display={'flex'} justifyContent={'center'} my={'2em'}>
                             <Button isLoading={loaded }
