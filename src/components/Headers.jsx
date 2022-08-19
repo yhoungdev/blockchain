@@ -25,13 +25,13 @@ const Header = () => {
     return (
         <>
 
-            <Box px={['','10em']} mb={'1em'} >
-            <Flex justifyContent={'space-between'} mb={'2em'} py={'0.5em'} bg={'#fff'}>
+            <Box px={['','10em']} mb={'1em'} bg={'#fdfdfdc2'} >
+            <Flex justifyContent={'space-between'} mb={'2em'} py={'0.5em'} bg={'#fdfdfdc2'}>
                 
                 
                 <Box>
                         
-                  <MainLogo/>
+                    <MainLogo/>
 
                 </Box>
 
@@ -75,7 +75,7 @@ const Header = () => {
 
                         (
                             <>
-                                <LoginButton />
+                                <LoginButton value={'Login'} />
                             </>
                         )
                     }

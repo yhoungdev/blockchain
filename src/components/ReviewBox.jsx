@@ -4,11 +4,11 @@ const ReviewBox = ({userName , rating , comment} ) => {
 
     return (
         <>
-            <Box my={'1em'} border={''} p={'1em'} boxShadow={'md'}>
+            <Box my={'1em'} border={''} p={['1.5em','2em']} boxShadow={''} bg={'#fff'} borderRadius={'0.5em'}>
                 <Text fontWeight={'bold'}> {userName} </Text>
                 <Text my={'0.5em'}> {comment} </Text>
                 <Text display={'flex'} alignItems={"center"}> Rate: {rating ? (
-                    <>
+                    <>  
                         {
                             Array(rating).fill(0).map((_,i) => (
                                 <AiFillStar color={'yellow'} size={'1em'} />
