@@ -40,7 +40,7 @@ const AdminHome = () => {
 
        
         formData.append('image', image)
-        formData.append('title', imageTitle)
+        formData.append('title', setTitle)
         formData.append('description', description)
         formData.append('tokenContract', tokenContract)
         formData.append('links', links)
@@ -56,10 +56,12 @@ const AdminHome = () => {
                 headers : {
                     'Authorization' : `Bearer ${localStorage.getItem('auth-token')}`
                 }
+
+               
             } );
 
             setLoaded(false)
-            console.log(image)
+            window.location.reload()
         } catch ( error ) {
             setLoaded(false )
         }
@@ -118,6 +120,13 @@ const AdminHome = () => {
                             <Flex gap={'1em'} flexDir={['column' , 'row']}>
                              <Inputs type={'text '} placeholder={'Token'} onChange={ e => setTokenContract(e.target.value)}/>
                              <Inputs type={' text '} placeholder={' Links '} onChange={ e => setLinks(e.target.value)}/>
+                             
+                            </Flex>
+
+                            <Flex gap={'1em'} flexDir={['column' , 'row']}>
+                             <Inputs type={'text '} placeholder={'Tokonomics'} onChange={ e => setTokenomics(e.target.value)}/>
+                             <Inputs type={'text '} placeholder={'#Enter Tags'} onChange={ e => setTags(e.target.value)}/>
+                            
                              
                             </Flex>
                         </FormControl>
