@@ -6,6 +6,7 @@ import {BiImageAdd} from 'react-icons/bi';
 import Inputs from "../../components/Inputs";
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import MainLogo from '../../components/MainLogo';
 
 const AdminHome = () => {
 
@@ -91,6 +92,7 @@ const AdminHome = () => {
                 <Box py={'3em'} width={['100%' , '50%']} mx={'auto'}
                  
                 >
+                   <center> <MainLogo/></center>
                    <Box my={'3em'} bg={'#fff'} py={'2em'} px={'2em'}>
                          <form >
                             <Text fontWeight={'bold'} textAlign={'center'} my={'0.5em'}> Create A Project </Text>
