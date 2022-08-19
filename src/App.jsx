@@ -17,6 +17,7 @@ import CreateAdmin from './Pages/Admin/Admins Auth/AdminSignup';
 import AdminHome from './Pages/Admin/AdminHome';
 import Loader from './components/Loader';
 import { Box } from '@chakra-ui/react';
+import NoItem from './Pages/NotItem';
 
 function App() {
   
@@ -43,7 +44,8 @@ function App() {
             <Route path='/home' element={<Homepage/>} />
             <Route path='/preview/:id' element={<ProjectView/>} />
             <Route path='*' element={<NotFound/>} />
-
+            <Route path='/skeleton' element={<NoItem/>} />
+          
             <Route path='/user/admin/upload' element={<UploadProject />} />
             <Route path='/admin/home' element={<AdminHome />} />
             <Route path='/user/admin/login' element={<AdminLogin />} />
