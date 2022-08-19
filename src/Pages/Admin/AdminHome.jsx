@@ -61,7 +61,7 @@ const AdminHome = () => {
             } );
 
             setLoaded(false)
-            window.location.reload()
+            //window.location.reload()
         } catch ( error ) {
             setLoaded(false )
         }
