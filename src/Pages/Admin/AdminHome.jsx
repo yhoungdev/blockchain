@@ -13,7 +13,7 @@ const AdminHome = () => {
     const navigate = useNavigate()
 
     const [loaded , setLoaded ] = useState(false )
-    const [title , setTitle ] = useState()
+    const [title , setTitle ] = useState('')
     const [ description , setDescription ] = useState()
     const [ tokenContract , setTokenContract ] = useState()
     const [ links , setLinks ] = useState()
@@ -40,7 +40,7 @@ const AdminHome = () => {
 
        
         formData.append('image', image)
-        formData.append('title', imageTitle)
+        formData.append('title', title)
         formData.append('description', description)
         formData.append('tokenContract', tokenContract)
         formData.append('links', links)
@@ -56,10 +56,13 @@ const AdminHome = () => {
                 headers : {
                     'Authorization' : `Bearer ${localStorage.getItem('auth-token')}`
                 }
+
+               
             } );
 
             setLoaded(false)
-            console.log(image)
+            console.log(title)
+            //window.location.reload()
         } catch ( error ) {
             setLoaded(false )
         }
@@ -120,7 +123,16 @@ const AdminHome = () => {
                              <Inputs type={' text '} placeholder={' Links '} onChange={ e => setLinks(e.target.value)}/>
                              
                             </Flex>
+
+                            <Flex gap={'1em'} flexDir={['column' , 'row']}>
+                             <Inputs type={'text '} placeholder={'Tokonomics'} onChange={ e => setTokenomics(e.target.value)}/>
+                             <Inputs type={'text '} placeholder={'#Enter Tags'} onChange={ e => setTags(e.target.value)}/>
+                            
+                             
+                            </Flex>
                         </FormControl>
+
+                        
 
                         <Flex gap={'1em'} flexDir={['column' , 'row']}>
                              <Inputs type={'title '} placeholder={'Description'} onChange={ e => setDescription(e.target.value)}
@@ -129,6 +141,8 @@ const AdminHome = () => {
                              
                              
                         </Flex>
+
+                        <Text fontWeight={'bold'} textAlign={'center'} color={'blue.600'} cursor={'pointer'} onClick={ e => navigate('/') }>Login as User</Text>
 
                         <Box display={'flex'} justifyContent={'center'} my={'2em'}>
                             <Button isLoading={loaded }

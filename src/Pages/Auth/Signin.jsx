@@ -39,38 +39,3 @@ const SignIn =() => {
 
 export default SignIn;
 
-
-// <AuthLayout>
-
-// <Box>
-
-//    <center>
-//      <Logo/>
-//    </center>
-
-     
-     
-
-        
-    
-//         <Box>
-
-            
-           
-
-//             <center>
-//                 {/* <Buttons value={'Sign In'}
-//                     isLoading={false}
-//                     loadingText={'Logging In...'}
-                
-//                 />     */}
-
-            
-//                 <LoginButton />
-//             </center>
-
-
-//         </Box>
-     
-// </Box>
-// </AuthLayout>
