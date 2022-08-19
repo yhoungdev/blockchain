@@ -13,7 +13,7 @@
     box-sizing: border-box;
     inset:-10px;
     border-radius: 50%;
-    border:10px solid #FF3D00;
+    border:10px solid #001eff;
     animation: prixClipFix 2s infinite linear;
   }
 
