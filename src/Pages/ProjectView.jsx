@@ -1,4 +1,4 @@
-import { Box , Button,  Container , FormLabel, Input,Image ,  Text, Select, useDisclosure} from "@chakra-ui/react";
+import { Box , Button, Flex,  Container , FormLabel, Input,Image ,  Text, Select, useDisclosure} from "@chakra-ui/react";
 import Header from "../components/Headers";
 import ContainerLayout from "../Layout/ContainerLayout";
 import { useNavigate , useParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import { useState , useEffect } from "react";
 import { fetchData } from "../Utils/Request";
 import ReviewModal from "../components/Modals/ReviewModal";
 import DisplayReview from "../components/DisplayReview";
+import {BiCommentError} from 'react-icons/bi';
 
 const ProjectView = () => {
 
@@ -63,54 +64,54 @@ const ProjectView = () => {
     return (
         <>
 
-            <Box mb={'3em'} position={'sticky'} left={0} top={0} right={0} zIndex={999}>
+            <Box  position={'sticky'} left={0} top={0} right={0} zIndex={999}>
                 <Header />
             </Box>
-            <Container maxW={'100%'} my={'8em'}>
+            <Container maxW={['100%']}  bg={'#fdf0e0'}>
               {
                 //check if user is authenticated
                 
                 true ? (
                     <>
 
-            <Box display={'flex'} my={'5em'} width={['100%','80%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} h={'70vh'}>
+            <Box display={'flex'} py={'1em'} width={['100%','75%']} mx={'auto'} flexDir={['column']} alignItems={'center'} justifyContent={'center'} >
               
-                <Box py={'2em'} px={['', '10em']} w={['100%' , '85%']}
-                bg={'#fff'} mx={'auto'}>
-                    <Text fontWeight={'bold'}>Project contents and Items</Text>
-
-                    <Box my={'2em'}>
-
-                        <Box>
-                            <Image src={image} h={'50vh'} w={'100%'}/>
-                        </Box>
-
-                       <Box my={'1em'}>
-                           <Text fontWeight={'bold'}>
-                                {title}
-                            </Text>
-
-                            <Text>
-                                <b>Token Contract:</b> {contract}
-                            </Text>
-                            <Text>
-                            {description}
-                            </Text>
-                       </Box>
-
-                    </Box>
-
-                    <Text fontWeight={'bold'}>Reviews</Text>
+                <Box py={'2em'} px={['1em', '3em']} w={['100%' , '85%']}
+                bg={'#fff'} mx={'auto'} borderRadius={'1em'}>
                     
-                    <Box my={'2em'} overflow={''}>
-                        
-                        <DisplayReview/>
-                    </Box>
 
-                    <Button onClick={onOpen}> Add Review </Button>
+                    <Flex  gap={'1em'} my={'1em'} flexDir={['column','row']}>
+                        <Box >
+                            <Image boxSize={['100px','150px']} maxW={'150px'} borderRadius={'0.5em'} src={image} alt='Dan Abramov' fallbackSrc="" />
+                        </Box>
+                        <Box>
+                            <Text fontWeight={'bold'} py={'1em'} fontSize={'1.2em'}>{title}</Text>
+                            <Text fontSize={'1em'}>{description}</Text>
+                            
+                        </Box>
+                    </Flex>
+
+                    
+                    
+                 
+
+                    <Button onClick={onOpen} w={['100%','30%']} bg={'#ffa00a'}
+                     _hover={{bg:'yellow.500'}} color={'#fff'} py={'1.5em'} gap={'0.5em'} > <BiCommentError/> Add Review </Button>
                     <ReviewModal isOpen={isOpen} onClose={onClose} />
                 </Box>
+
+                
+                <Box my={'2em'} overflow={''} bg={'#fdf0e0'} 
+                w={['100%','85%']} p={'1.5em'} borderRadius={'0.5em'}>
+
+                    <Text fontWeight={'bold'}py={'1em'} > Project Reviews </Text>
+                        
+                        <DisplayReview/>
+
+                </Box>
+                
               </Box>
+
                     
                     </> 
                 ) : (
@@ -119,6 +120,7 @@ const ProjectView = () => {
                     </>
                 )
               }
+              
             </Container>
 
         </>

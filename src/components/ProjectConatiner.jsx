@@ -1,5 +1,6 @@
 import { Box , Image , Flex, Text, Button } from "@chakra-ui/react";
 import {AiFillStar} from 'react-icons/ai'
+import {FiExternalLink} from 'react-icons/fi'
 
 const ProjectContainer =({name , image , rating , description , onClick}) => {
     return (
@@ -11,8 +12,10 @@ const ProjectContainer =({name , image , rating , description , onClick}) => {
              
              >
                 
-                <Box mb={'1em'}>
-                 <Image src={image}  h={'40vh'} width={'100%'}/>
+                <Box mb={'1em'} display={'flex'} justifyContent
+                ={'center'}>
+                 
+                 <Image boxSize={['100px','200px']} maxW={'100%'} borderRadius={'0.5em'} src={image} alt='Dan Abramov' fallbackSrc="" />
                 </Box>
                 <Text fontWeight={'bold'}> {name}</Text>
                 <Box display={'flex'} alignItems={'center'} gap={'1em'}> <AiFillStar fill="#fdff0c"/><Text>{rating}</Text></Box>
@@ -21,7 +24,9 @@ const ProjectContainer =({name , image , rating , description , onClick}) => {
                     <Text>{description}</Text>
                 </Box>
 
-                <Button my={'0.5em'} w={'100%'} py={'1.7em'} onClick={onClick}>View Project</Button>
+                <Button my={'0.5em'} w={'100%'} py={'1.7em'}
+                 onClick={onClick} bg={'#3db777'}
+                  color={'#fff'} gap={'0.5em'} _hover={{bg:'green.600'}}> <FiExternalLink/>  <Text>View Project</Text></Button>
             </Box>
         
         </>
