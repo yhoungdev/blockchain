@@ -16,13 +16,7 @@ const Header = () => {
     if(isAuthenticated) {
         localStorage.setItem('userName', user.name)
     }
-    const logOut = () => {
-        logout({returnTo: window.location.origin})
-        setTimeout(()=> {
-            window.location.reload()
-        }, 2000)
-        console.log('logged ')
-    };
+ 
     return (
         <>
 
@@ -54,7 +48,9 @@ const Header = () => {
                                  <Text display={['none','block']} fontWeight={'bold'}>Hi,{user.nickname}</Text>
                                  <MdOutlineArrowDropDown size={'2em'}/>
                             </Flex>
-                            <MenuList>
+                          
+                        </MenuButton>
+                        <MenuList>
                                 <MenuItem display={['block','']} >
 
                                      <Flex  alignItems={'center'} gap={"2"}>
@@ -63,15 +59,14 @@ const Header = () => {
 
                                 </MenuItem>
                                
-                                <MenuItem onClick={() => alert('Kagebunshin')} color={'red'}>
+                                 <MenuItem  color={'red'}>
                                   
-                                    <Flex  alignItems={'center'} gap={"2"} cursor={"pointer"} >
-                                         <HiOutlineLogout/><Text  onClick={ e => console.warn('no error') }>Logout</Text>
+                                    <Flex  alignItems={'center'} gap={"2"} cursor={"pointer"} onClick={ e =>logout({returnTo: window.location.origin}) }>
+                                         <HiOutlineLogout/><Text  >Logout</Text>
                                     </Flex>
                             
                                 </MenuItem>
                             </MenuList>
-                        </MenuButton>
                     </Menu>
                                 </>
                         ) :

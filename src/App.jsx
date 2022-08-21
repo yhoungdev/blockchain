@@ -49,7 +49,7 @@ function App() {
             <Route path='/user/admin/upload' element={<UploadProject />} />
             <Route path='/admin/home' element={<AdminHome />} />
             <Route path='/user/admin/login' element={<AdminLogin />} />
-            {/* <Route path='/createAdmin' element={<CreateAdmin />} /> */}
+            <Route path='/createAdmin' element={<CreateAdmin />} />
           </Routes>
         </Router>
 
