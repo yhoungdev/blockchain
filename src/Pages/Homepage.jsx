@@ -58,7 +58,7 @@ const Homepage = () => {
                 <Box>
 
                     <Text fontWeight={'bold'} py={'1em'} fontSize={'1.5em'}>List of Dapps</Text>
-                    <Text my={'0.5em'}> Project contents and Items  </Text>
+                   
                 </Box>
  
                 <Box display={'flex'} 
@@ -89,7 +89,8 @@ const Homepage = () => {
                             </>
                             ) : (
                                 <>
-                                   <Box >
+                                   <Box  w={['100%','100vw']}>
+                                        
                                         <NoItem/>
                                    </Box>
                                 </>
