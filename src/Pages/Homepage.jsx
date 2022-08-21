@@ -77,7 +77,9 @@ const Homepage = () => {
 
 
                         return (
-                                    <ProjectContainer key={index} item={item}
+                                    <ProjectContainer key={index}
+                                    name={item.title}
+                                    item={item}
                                     image={item.imageUrl}
                                     description={item.description}
                                     tags={item.tags == 'undefined' ? '' : item.tags}
