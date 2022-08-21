@@ -9,6 +9,7 @@ const ProjectContainer =({name , image , rating , description ,tags, link, onCli
 
             <Box bg={'#fff'}
              px={'3em'} py={'2em'} width={['100' , '30%']}
+             maxW={['100%','30%']}
              
              >
                 
@@ -17,10 +18,11 @@ const ProjectContainer =({name , image , rating , description ,tags, link, onCli
                  
                  <Image boxSize={['100px','200px']} maxW={'100%'} borderRadius={'0.5em'} src={image} alt='Dan Abramov' fallbackSrc="" />
                 </Box>
-                <Text fontWeight={'bold'}> {name}</Text>
-                <Box display={'flex'} alignItems={'center'} gap={'1em'}> <AiFillStar fill="#fdff0c"/><Text>{rating}</Text></Box>
+                <Text fontWeight={'semi-bold'} my={'0.8em'}> {name}</Text>
+                {/* <Box display={'flex'} alignItems={'center'} gap={'1em'}> <AiFillStar fill="#fdff0c"/><Text>{rating}</Text></Box> */}
                 
                 <Box>
+                   
                     <Text>{description}</Text>
 
                     <Text fontWeight={'bold'} my={'0.5em'}>{tags}</Text>
