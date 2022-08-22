@@ -3,6 +3,7 @@ import ReviewBox from "./ReviewBox";
 import { useState , useEffect } from "react";
 import { fetchData } from "../Utils/Request";
 import { useParams } from "react-router-dom";
+import moment from "moment/moment";
 
 const DisplayReview = () => {
 
@@ -15,8 +16,8 @@ const DisplayReview = () => {
 
         try {
             const response =  await fetchData(`/review/all/${id}`)
-            setReviewData(response.reviews.slice(12))
-            console.log(response.reviews.slice(10))
+            setReviewData(response.reviews)
+          
         
         } catch (error) {
             console.log(error)
@@ -36,9 +37,11 @@ const DisplayReview = () => {
                 {
                     reviewData <=0 ? 'No Review For this project' : 
                         reviewData.map(review => (
+                         
                             <>
+                              
                                 <ReviewBox userName={review.name} 
-                                 comment={review.comment} rating={review.rating}/>
+                                 comment={review.comment} rating={review.rating} date={moment(review.createdAt).startOf('hour').fromNow()}/>
                             </>
                         ))
                     

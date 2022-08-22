@@ -1,6 +1,7 @@
 import { Box , Text , Flex  } from "@chakra-ui/react";
 import {AiFillStar} from 'react-icons/ai';
-const ReviewBox = ({userName , rating , comment} ) => {
+import {AiOutlineClockCircle}  from 'react-icons/ai'
+const ReviewBox = ({userName , rating , comment, date} ) => {
 
     return (
         <>
@@ -15,7 +16,16 @@ const ReviewBox = ({userName , rating , comment} ) => {
                             ))
                         }
                     </>
+
+             
                 ) : ''}  </Text>
+
+                   {/* //   display time  */}
+                <Text display={'flex'} alignItems={'center'} gap={'0.5em'} mt={'1em'}>
+                    <AiOutlineClockCircle/>
+                    {date}
+                </Text>
+                
             </Box> 
         </>
     )
