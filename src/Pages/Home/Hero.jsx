@@ -50,7 +50,7 @@ const Hero = () => {
                 width={["", "70%"]}
                 mx={"auto"}
               >
-                The Leading Decentralized platform on SmartBCH
+                Vote , Data Aggregatio, Review and Get Notified 
               </Text>
 
               <Text my={"2em"} textAlign={"center"}>
@@ -60,7 +60,7 @@ const Hero = () => {
               </Text>
             </Box>
                   
-            <LoginButton value={'Get Start'}/>
+            <LoginButton value={'Get Start 🚀'}  color={'#fff'}/>
 
           </Flex>
         </ContainerLayout>

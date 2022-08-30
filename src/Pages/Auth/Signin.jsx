@@ -29,9 +29,9 @@ const SignIn =() => {
         <>
         
            <Hero/>
-           <Section/>
+           {/* <Section/>
            <LightBox/>
-           <Divider />
+           <Divider /> */}
 
         </>
     )
